@@ -14,3 +14,14 @@
   cursor: pointer;
   box-shadow: 0.5rem 1rem rgba(0,0,0,.15);
 }
+
+/* ----footer---- */
+.footer{
+  background-color: rgb(0, 101, 219);
+  background-color: linear-gradient( 90deg, rgb(0, 101, 219) 40%, rgba(0, 212, 255, 1) 
+  100%);
+}
+
+.footer .social:hover{
+  color: orange;
+}
