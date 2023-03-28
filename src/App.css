@@ -15,6 +15,14 @@
   box-shadow: 0.5rem 1rem rgba(0,0,0,.15);
 }
 
+/* -----form----- */
+.form{
+  background-color: #0f0c29;
+  background: -webkit-linear-gradient(to left,#24243e,#302b63,#0f0c29);
+  background:linear-gradient(to left,#24243e,#302b63,#0f0c29);
+  color:white;
+}
+
 /* ----footer---- */
 .footer{
   background-color: #0f0c29;

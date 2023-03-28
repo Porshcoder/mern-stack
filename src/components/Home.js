@@ -2,6 +2,7 @@ import React from "react";
 import Contact from "./Contact";
 import About from "./About";
 import Services from "./Services";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,12 +24,12 @@ const Home = () => {
               </p>
 
               <div className="buttons d-flex justify-content-center py-4">
-                <button className="btn btn-light me-4 rounded-pill px-4 py-2">
+                <NavLink to='/contact' className="btn btn-light me-4 rounded-pill px-4 py-2">
                   Get Quote
-                </button>
-                <button className="btn btn-outline-light  rounded-pill px-4 py-2">
+                </NavLink>
+                <NavLink to='/service' className="btn btn-outline-light  rounded-pill px-4 py-2">
                 Our Services
-              </button>
+              </NavLink >
               </div>
               
             </div>

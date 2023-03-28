@@ -1,4 +1,6 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
+
 
 const Navbar = () => {
   return (
@@ -12,24 +14,24 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
+          <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/about">About</a>
+          <NavLink className="nav-link" to="/about">About</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/service">Services</a>
+          <NavLink className="nav-link" to="/service">Services</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/contact">Contact</a>
+          <NavLink className="nav-link" to="/contact">Contact</NavLink>
         </li>
 
       </ul>
-      <a className="navbar-brand fw-bolder fs-4 mx-auto" href="#">LOGO</a>
-    <button className='btn btn-outline-primary ms-auto px-4 rounded-pill'>
-        <i className='fa fa-sign-in me-2'></i>Login</button>
-    <button className='btn btn-outline-primary ms-2 px-4 rounded-pill'>
-    <i className='fa fa-user-plus me-2'></i>Register</button>
+      <NavLink className="navbar-brand fw-bolder fs-4 mx-auto" to="/">LOGO</NavLink>
+    <NavLink to='/login' className='btn btn-outline-primary ms-auto px-4 rounded-pill'>
+        <i className='fa fa-sign-in me-2'></i>Login</NavLink>
+    <NavLink to='/register' className='btn btn-outline-primary ms-2 px-4 rounded-pill'>
+    <i className='fa fa-user-plus me-2'></i>Register</NavLink>
     </div>
   </div>
 </nav>
