@@ -3,12 +3,12 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer text-white bg-primary">
+      <footer className="footer text-white ">
         <div className="container">
           <footer className="py-5">
             <div className="row">
               <div className="col-3">
-                <h4>FINE ART</h4>
+                <h4>LOGO</h4>
               </div>
 
               <div className="col-2">
@@ -87,7 +87,7 @@ const Footer = () => {
                       className="form-control"
                       placeholder="Enter Email...."
                     />
-                    <button type="button" className="rounded-pill btn btn-secondary">Subscribe</button>
+                    <button type="button" className="rounded-pill btn btn-primary">Subscribe</button>
                   </div>
                 </form>
               </div>

@@ -1,4 +1,7 @@
 import React from "react";
+import Contact from "./Contact";
+import About from "./About";
+import Services from "./Services";
 
 const Home = () => {
   return (
@@ -6,7 +9,10 @@ const Home = () => {
       <section id="home">
         <div className="container">
           <div className="row justify-content-center">
+
+          
             <div className="col-md-8 mt-5">
+            
               <h1 className="display-4 fw-bolder mb-4 text-center text-white">
                 Feel the Fresh Business Perspective
               </h1>
@@ -29,6 +35,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <About/>
+      <Services/>
+      <Contact/>
     </div>
   );
 };
