@@ -38,6 +38,7 @@ const Login = () => {
             }else{
                 window.alert("Login Successfull")
                 window.location.reload();
+                //token is generated
             }
             
         } catch (error) {

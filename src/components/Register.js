@@ -40,7 +40,7 @@ try {
             username,email,password
         })
     })
-
+    console.log(res.status)
     if(res.status === 400 || !res){
         window.alert("Already Used Details")
     }else{
