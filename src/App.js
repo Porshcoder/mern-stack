@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import {Route,Routes} from 'react-router-dom'
 import Login from './components/Login';
 import Register from './components/Register';
-import Dashboard from './components/Dashboard';
+
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
     <Route path='/contact' element={<Contact/>}></Route>
     <Route path='/login' element={<Login/>}></Route>
     <Route path='/register' element={<Register/>}></Route>
-    <Route path='/dashboard' element={<Dashboard/>}></Route>
+   
    </Routes>
    
    <Footer/>

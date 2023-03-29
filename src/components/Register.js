@@ -1,10 +1,59 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
-
+import {useNavigate} from 'react-router'
 
 
 
 const Register = () => {
+
+    const history = useNavigate()
+
+const [user, setUser] = useState({
+    username : "",
+    email : "",
+    password : ""
+});
+// handle inputs
+const handleInput = (event) =>{
+let name = event.target.name;
+let value = event.target.value;
+
+setUser({...user, [name]:value});
+}
+
+// handle submit
+const handleSubmit = async (event)=>{
+event.preventDefault();
+
+//object destructuring
+//store object data into variables
+
+const {username, email,password} = user;
+try {
+    //it is submitted on port 3001 by default which is front end but we need to submit it to the backend which is on port 5000.so we need proxy
+    const res = await fetch('/register',{
+        method : "POST",
+        headers : {
+            "Content-Type" : "application/json"
+        },
+        body : JSON.stringify({
+            username,email,password
+        })
+    })
+
+    if(res.status === 400 || !res){
+        window.alert("Already Used Details")
+    }else{
+        //you ought to restart the server for proxy to work
+        window.alert("Registered Successfully");
+        history.push('/login')
+    }
+} catch (error) {
+   console.log(error) 
+}
+}
+
+
   return (
     <div>
       <div className="container shadow my-5">
@@ -22,7 +71,7 @@ const Register = () => {
           </div>
           <div className="col-md-6 p-5">
             <h1 className="display-6 fw-bolder mb-5">REGISTER</h1>
-            <form>
+            <form onSubmit={handleSubmit} method='POST'>
               <div className="mb-3">
                 <label for="name" className="form-label">
                   Username:
@@ -31,6 +80,10 @@ const Register = () => {
                   type="text"
                   className="form-control"
                   id="name"
+                  name = "username"
+                  value={user.username}
+                  onChange = {handleInput}
+
                 />
               </div>
               <div className="mb-3">
@@ -42,6 +95,9 @@ const Register = () => {
                   className="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
+                  name = "email"
+                  value={user.email}
+                  onChange = {handleInput}
                 />
                 <div id="emailHelp" className="form-text">
                   We'll never share your email with anyone else.
@@ -55,9 +111,12 @@ const Register = () => {
                   type="password"
                   className="form-control"
                   id="exampleInputPassword1"
+                  name = "password"
+                  value={user.password}
+                  onChange = {handleInput}
                 />
               </div>
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <label for="exampleInputPassword1" className="form-label">
                   Confirm Password:
                 </label>
@@ -66,7 +125,7 @@ const Register = () => {
                   className="form-control"
                   id="exampleInputPassword1"
                 />
-              </div>
+              </div> */}
               <div className="mb-3 form-check">
                 <input
                   type="checkbox"
